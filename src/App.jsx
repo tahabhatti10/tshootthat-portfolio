@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -55,6 +56,9 @@ export default function App() {
 
       {/* Lightbox */}
       <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </>
   );
 }
