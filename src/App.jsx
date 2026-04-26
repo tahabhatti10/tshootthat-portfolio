@@ -12,52 +12,26 @@ import Footer from './components/Footer';
 import Lightbox from './components/Lightbox';
 
 export default function App() {
-  const [lightboxSrc, setLightboxSrc] = useState(null);
+  const [lightboxImages, setLightboxImages] = useState(null);
 
   return (
     <>
-      {/* Background blobs */}
       <div className="blob blob-1"></div>
       <div className="blob blob-2"></div>
       <div className="blob blob-3"></div>
-
-      {/* Custom cursor */}
       <CustomCursor />
-
-      {/* Navigation */}
       <Navbar />
-
-      {/* Hero */}
       <Hero />
-
-      {/* Marquee */}
       <Marquee />
-
-      {/* About */}
       <About />
-
       <div className="section-divider"></div>
-
-      {/* Skills */}
       <Skills />
-
       <div className="section-divider"></div>
-
-      {/* Projects */}
-      <Projects onOpenLightbox={(src) => setLightboxSrc(src)} />
-
+      <Projects onOpenLightbox={(imgs) => setLightboxImages(imgs)} />
       <div className="section-divider"></div>
-
-      {/* Contact */}
       <Contact />
-
-      {/* Footer */}
       <Footer />
-
-      {/* Lightbox */}
-      <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
-
-      {/* Vercel Analytics */}
+      <Lightbox images={lightboxImages} onClose={() => setLightboxImages(null)} />
       <Analytics />
     </>
   );

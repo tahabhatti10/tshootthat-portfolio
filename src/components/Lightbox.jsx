@@ -1,11 +1,21 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 
-export default function Lightbox({ src, onClose }) {
-  const isActive = !!src;
+export default function Lightbox({ images, onClose }) {
+  // images can be a single string or an array
+  const imgArray = images ? (Array.isArray(images) ? images : [images]) : [];
+  const isActive = imgArray.length > 0;
+  const [current, setCurrent] = useState(0);
+
+  // Reset to first image whenever lightbox opens
+  useEffect(() => {
+    if (isActive) setCurrent(0);
+  }, [isActive, images]);
 
   const handleKeyDown = useCallback((e) => {
     if (e.key === 'Escape') onClose();
-  }, [onClose]);
+    if (e.key === 'ArrowRight') setCurrent(c => (c + 1) % imgArray.length);
+    if (e.key === 'ArrowLeft') setCurrent(c => (c - 1 + imgArray.length) % imgArray.length);
+  }, [onClose, imgArray.length]);
 
   useEffect(() => {
     if (isActive) {
@@ -24,13 +34,43 @@ export default function Lightbox({ src, onClose }) {
     if (e.target === e.currentTarget) onClose();
   };
 
+  const prev = (e) => { e.stopPropagation(); setCurrent(c => (c - 1 + imgArray.length) % imgArray.length); };
+  const next = (e) => { e.stopPropagation(); setCurrent(c => (c + 1) % imgArray.length); };
+
   return (
     <div id="lightbox" className={isActive ? 'active' : ''} onClick={handleBackdropClick}>
       <button id="lightbox-close" onClick={onClose}>✕</button>
+
       <div id="lightbox-inner">
-        <img id="lightbox-img" src={src || ''} alt="Project preview" />
+        <img
+          id="lightbox-img"
+          src={imgArray[current] || ''}
+          alt={`Project preview ${current + 1}`}
+        />
       </div>
-      <div id="lightbox-label"><span>✦</span> Scroll to explore all screens</div>
+
+      {imgArray.length > 1 && (
+        <>
+          <button className="lightbox-nav lightbox-prev" onClick={prev}>‹</button>
+          <button className="lightbox-nav lightbox-next" onClick={next}>›</button>
+          <div id="lightbox-label">
+            <span>✦</span> {current + 1} / {imgArray.length} — use arrow keys or click to navigate
+          </div>
+          <div className="lightbox-dots">
+            {imgArray.map((_, i) => (
+              <button
+                key={i}
+                className={`lightbox-dot${i === current ? ' active' : ''}`}
+                onClick={(e) => { e.stopPropagation(); setCurrent(i); }}
+              />
+            ))}
+          </div>
+        </>
+      )}
+
+      {imgArray.length === 1 && (
+        <div id="lightbox-label"><span>✦</span> Scroll to explore all screens</div>
+      )}
     </div>
   );
 }
