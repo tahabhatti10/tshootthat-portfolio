@@ -55,7 +55,7 @@ const skillsData = [
     desc: 'Harnessing cutting-edge generative AI to conceptualise and synthesize stunning, high-fidelity imagery and dynamic content. Blending human creativity with machine intelligence to push the boundaries of digital artistry.',
     tags: [
       { label: 'Generative AI', color: 'pink' }, { label: 'Prompt Engineering', color: 'pink' },
-      { label: 'Midjourney', color: 'neutral' }, { label: 'Content Synthesis', color: 'neutral' },
+      { label: 'GenAI Tools', color: 'neutral' }, { label: 'Content Synthesis', color: 'neutral' },
     ],
   },
 ];

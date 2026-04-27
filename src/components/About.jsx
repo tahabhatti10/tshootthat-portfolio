@@ -32,7 +32,7 @@ export default function About() {
             a full-stack creative mindset to every project — from concept all the way through to execution.
           </p>
           <div className="about-tags">
-            {['Figma', 'Photoshop', 'Illustrator', 'Canva Pro', 'Premiere Pro', 'CapCut', 'Midjourney', 'Meta Ads'].map(
+            {['Figma', 'Photoshop', 'Illustrator', 'Canva Pro', 'Premiere Pro', 'CapCut', 'GenAI Tools', 'Meta Ads'].map(
               (tag) => (
                 <span className="about-tag" key={tag}>{tag}</span>
               )
