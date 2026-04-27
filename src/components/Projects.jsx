@@ -4,8 +4,14 @@ import cricktopImg from '../assets/cricktop.jpg';
 import emploi1 from '../assets/emploi-1.png';
 import emploi2 from '../assets/emploi-2.png';
 import emploi3 from '../assets/emploi-3.png';
+import parhlaiCoverImg from '../assets/parhlai-cover.jpg';
 
 const emploiImages = [emploi1, emploi2, emploi3];
+
+const parhlaiPosts = [
+  parhlaiCoverImg
+  // Note: Ready for more local images here
+];
 
 export default function Projects({ onOpenLightbox }) {
   const revealRef1 = useReveal();
@@ -72,17 +78,24 @@ export default function Projects({ onOpenLightbox }) {
           </div>
         </div>
 
-        {/* Coming Soon */}
+        {/* Parhlai */}
         <div className="project-card" onMouseMove={handleCardMouse}>
           <div className="project-num">03</div>
-          <div className="project-name">Coming Soon</div>
+          <div className="project-name">Parhlai</div>
+          <div className="project-preview" onClick={() => onOpenLightbox(parhlaiPosts)}>
+            <img src={parhlaiCoverImg} alt="Parhlai Social Media Posts" />
+            <div className="project-preview-overlay"></div>
+            <div className="project-preview-count">+{parhlaiPosts.length} posts</div>
+          </div>
           <p className="project-desc">
-            Another project slot waiting to be filled. Share your work and it'll be built
-            into a proper showcase card.
+            As the Marketing Lead and UI Designer at @parhlai, I conceptualized and designed the starting posts
+            to establish a strong brand identity. I planned every post and formulated robust marketing strategies
+            to drive initial engagement and growth, setting the visual and strategic foundation for the company.
           </p>
           <div className="project-footer">
             <span className="project-tag pink">Marketing</span>
-            <span className="project-tag lime">Social</span>
+            <span className="project-tag purple">UI Design</span>
+            <span className="project-tag lime">Strategy</span>
             <div className="project-arrow">→</div>
           </div>
         </div>
