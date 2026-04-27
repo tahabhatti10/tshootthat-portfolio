@@ -1,12 +1,28 @@
 import { useCallback } from 'react';
 import useReveal from '../hooks/useReveal';
-import cricktopImg from '../assets/cricktop.jpg';
+import cricktopIntro from '../assets/cricktop/intro.png';
+import cricktopLogin from '../assets/cricktop/login.png';
+import cricktopProfile from '../assets/cricktop/profile.png';
+import cricktopEditProfile from '../assets/cricktop/edit-profile.png';
+import cricktopDms from '../assets/cricktop/dms.png';
+import cricktopNotifications from '../assets/cricktop/notifications.png';
+import cricktopNoActivity from '../assets/cricktop/no-activity-prompt.png';
 import emploi1 from '../assets/emploi-1.png';
 import emploi2 from '../assets/emploi-2.png';
 import emploi3 from '../assets/emploi-3.png';
 import parhlaiCoverImg from '../assets/parhlai-cover.jpg';
 
 const emploiImages = [emploi1, emploi2, emploi3];
+
+const cricktopImages = [
+  cricktopIntro,
+  cricktopLogin,
+  cricktopProfile,
+  cricktopEditProfile,
+  cricktopDms,
+  cricktopNotifications,
+  cricktopNoActivity
+];
 
 const parhlaiPosts = [
   'https://www.instagram.com/p/DQFIwgKjFF8/embed',
@@ -41,9 +57,10 @@ export default function Projects({ onOpenLightbox }) {
         <div className="project-card featured" onMouseMove={handleCardMouse}>
           <div className="project-num">01 / <span>FEATURED</span></div>
           <div className="project-name">CrickTop</div>
-          <div className="project-preview" onClick={() => onOpenLightbox(cricktopImg)}>
-            <img src={cricktopImg} alt="CrickTop App UI Design" />
+          <div className="project-preview" onClick={() => onOpenLightbox(cricktopImages)}>
+            <img src={cricktopIntro} alt="CrickTop App UI Design" />
             <div className="project-preview-overlay"></div>
+            <div className="project-preview-count">+{cricktopImages.length} screens</div>
           </div>
           <p className="project-desc">
             A full-featured sports mobile app built around community and content. CrickTop lets users
