@@ -1,6 +1,6 @@
 const items = [
   'UX/UI Design', 'Brand Identity', 'Marketing Strategy',
-  'Motion & Video', 'Social Media', 'Design Systems',
+  'Motion & Video', 'Social Media', 'Design Systems', 'AI Generation'
 ];
 
 export default function Marquee() {

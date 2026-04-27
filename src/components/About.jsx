@@ -28,11 +28,11 @@ export default function About() {
           <p>
             Beyond design, I lead <strong>marketing initiatives</strong>, manage brand presence across
             social platforms, and produce <strong>video content</strong> that tells stories with impact.
-            I bring a full-stack creative mindset to every project — from concept all the way through
-            to execution.
+            I also leverage <strong>generative AI</strong> to synthesize innovative visuals at scale, bringing
+            a full-stack creative mindset to every project — from concept all the way through to execution.
           </p>
           <div className="about-tags">
-            {['Figma', 'Photoshop', 'Illustrator', 'Canva Pro', 'Premiere Pro', 'CapCut', 'Meta Ads'].map(
+            {['Figma', 'Photoshop', 'Illustrator', 'Canva Pro', 'Premiere Pro', 'CapCut', 'Midjourney', 'Meta Ads'].map(
               (tag) => (
                 <span className="about-tag" key={tag}>{tag}</span>
               )
@@ -50,7 +50,7 @@ export default function About() {
               <div className="stat-label">Projects Delivered</div>
             </div>
             <div className="stat-box">
-              <div className="stat-num">5</div>
+              <div className="stat-num">6</div>
               <div className="stat-label">Core Disciplines</div>
             </div>
             <div className="stat-box">

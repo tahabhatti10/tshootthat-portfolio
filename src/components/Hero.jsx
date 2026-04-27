@@ -13,6 +13,7 @@ export default function Hero() {
         <span className="role-pill tertiary">Graphics Designer</span>
         <span className="role-pill tertiary">Video Editor</span>
         <span className="role-pill tertiary">Social Media</span>
+        <span className="role-pill tertiary">AI Artist</span>
       </div>
       <p className="hero-desc">
         A multi-disciplinary creative who shapes brands from the ground up — designing interfaces
