@@ -42,11 +42,21 @@ export default function Lightbox({ images, onClose }) {
       <button id="lightbox-close" onClick={onClose}>✕</button>
 
       <div id="lightbox-inner">
-        <img
-          id="lightbox-img"
-          src={imgArray[current] || ''}
-          alt={`Project preview ${current + 1}`}
-        />
+        {imgArray[current] && imgArray[current].includes('instagram.com') ? (
+          <iframe
+            id="lightbox-iframe"
+            src={imgArray[current]}
+            style={{ width: '100%', minHeight: '650px', border: 'none', display: 'block', backgroundColor: '#fff' }}
+            allowTransparency="true"
+            scrolling="no"
+          />
+        ) : (
+          <img
+            id="lightbox-img"
+            src={imgArray[current] || ''}
+            alt={`Project preview ${current + 1}`}
+          />
+        )}
       </div>
 
       {imgArray.length > 1 && (

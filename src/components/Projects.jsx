@@ -9,8 +9,12 @@ import parhlaiCoverImg from '../assets/parhlai-cover.jpg';
 const emploiImages = [emploi1, emploi2, emploi3];
 
 const parhlaiPosts = [
-  parhlaiCoverImg
-  // Note: Ready for more local images here
+  'https://www.instagram.com/p/DQFIwgKjFF8/embed',
+  'https://www.instagram.com/p/DPQ5TtOjvY-/embed',
+  'https://www.instagram.com/p/DPTbrCfDDIm/embed',
+  'https://www.instagram.com/p/DMDjppeoFD8/embed',
+  'https://www.instagram.com/p/DMDjgMMI1Mw/embed',
+  'https://www.instagram.com/p/DNAxWShIV7J/embed'
 ];
 
 export default function Projects({ onOpenLightbox }) {
