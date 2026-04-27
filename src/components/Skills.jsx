@@ -50,6 +50,14 @@ const skillsData = [
       { label: 'Visual Identity', color: 'neutral' }, { label: 'Canva Pro', color: 'neutral' },
     ],
   },
+  {
+    icon: '🤖', color: 'pink', name: 'AI Generation',
+    desc: 'Harnessing cutting-edge generative AI to conceptualise and synthesize stunning, high-fidelity imagery and dynamic content. Blending human creativity with machine intelligence to push the boundaries of digital artistry.',
+    tags: [
+      { label: 'Generative AI', color: 'pink' }, { label: 'Prompt Engineering', color: 'pink' },
+      { label: 'Midjourney', color: 'neutral' }, { label: 'Content Synthesis', color: 'neutral' },
+    ],
+  },
 ];
 
 export default function Skills() {
