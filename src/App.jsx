@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import CustomCursor from './components/CustomCursor';
-import InteractiveParticleField from './components/InteractiveParticleField';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Marquee from './components/Marquee';
@@ -17,7 +16,6 @@ export default function App() {
 
   return (
     <>
-      <InteractiveParticleField />
       <div className="blob blob-1"></div>
       <div className="blob blob-2"></div>
       <div className="blob blob-3"></div>
